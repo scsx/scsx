@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Polytopia</title>
+<link href="https://fonts.googleapis.com/css?family=Josefin+Sans:300,600" rel="stylesheet">
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<style>
+abbr,article,aside,audio,blockquote,body,code,div,em,fieldset,footer,form.form,h1,h2,h3,h4,h5,h6,header,html,iframe,img,label,legend,li,nav,object,ol,p,pre,section,small,span,strong,sub,sup,table,tbody,td,tfoot,th,thead,time,tr,ul,video{padding:0;border:0;margin:0;background:0 0;font-size:100%;font-weight:inherit;vertical-align:baseline}input[type=checkbox],th{vertical-align:bottom}article,aside,figure,footer,header,nav,section{display:block}html{box-sizing:border-box;overflow-y:scroll}*,::after,::before{box-sizing:inherit}img,object{max-width:100%}ul{list-style:none}table{border-collapse:collapse;border-spacing:0}th{font-weight:700}td{font-weight:400;vertical-align:top}input,select{vertical-align:middle}input[type=radio]{vertical-align:text-bottom}strong{font-weight:700}input[type=file],label{cursor:pointer}input,select,textarea{border:0;margin:0}button,input[type=button],input[type=submit]{padding:0;border:0;border-radius:0;margin:0;background:0 0;cursor:pointer}button::-moz-focus-inner{padding:0;border:0}
+
+body { background-image: url(http://midjiwan.com/____impro/1/onewebmedia/skybg.png?etag=%2211250-568193c9%22&ignoreAspectRatio&resize=260,454); background-size: cover; font-family: 'Josefin Sans', sans-serif; } 
+h1 { color: #fff; font-size: 80px; text-align: center; margin: 5vw 0; }
+table { width: 66%; margin: 50px auto; table-layout: fixed; }
+table td { padding: 10px; border: 2px solid #ff95d0; border-collapse: collapse; text-align: center; }
+table td button { padding: 10px; background: #fff; color: #5d8dd6; font-size: 20px; }
+table td button:hover { box-shadow: 4px 4px pink; }
+table td b { display: block; color: #333; font-size: 26px; margin: 10px 0; text-transform: capitalize; }
+</style>
+</head>
+
+<body>
+	
+<h1>Generate Polytopia City Names</h1>
+<table>
+	<tr>
+		<td><button onclick="getName(pacific, 5)">Pacific</button></td>
+		<td><button onclick="getName(russian, 4)">Slavic</button></td>
+		<td><button onclick="getName(english, 3)">Saxon</button></td>
+		<td><button onclick="getName(greek, 3)">Greek</button></td>
+	</tr>
+	<tr>
+		<td class="n pacific"></td>
+		<td class="n russian"></td>
+		<td class="n english"></td>
+		<td class="n greek"></td>
+	</tr>
+	<tr>
+		<td colspan="4" style="display:none;"><button onclick="clearTable()">Clear</button></td>
+	</tr>
+</table>
+<p class="res"></p>
+
+<script>
+var pacific = ["sa", "vo", "bo", "da", "ri", "mo", "xi", "wu", "de", "bu", "tu", "te"];
+var russian = ["kri", "mos", "grad", "nov", "vla", "petr", "smo", "ski", "ensk", "bo", "da"];
+var english = ["pool", "bir", "borough", "burg", "she", "bos", "ton", "lon", "shire", "che", "lee", "man"];
+var greek = ["chron", "cli", "pre", "eu", "exo", "gas", "gyn", "pro", "hex", "iso", "octa", "pho", "ism", "gy"];
+pacific.name = 'pacific';
+russian.name = 'russian';
+english.name = 'english';
+greek.name = 'greek';
+
+function getName(array, namelength){
+	var theName = "";
+	var nameLength = Math.floor(Math.random() * namelength) + 2;
+	for (i = 0; i < nameLength; i++) {
+		var arrLength = Math.floor(Math.random() * array.length);
+		theName += array[arrLength];
+	}
+	$("td." + array).html( $("td." + array).html() + "<b>" + theName + "</b>");
+	$("td." + array.name).prepend("<b>" + theName + "</b>");
+	$("td[colspan]").show(0);
+}
+function clearTable(){
+	$("td.n").html("");
+}
+</script>
+</body>
+</html>

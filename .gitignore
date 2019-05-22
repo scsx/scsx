@@ -1,0 +1,15 @@
+# Ignore everything
+/*
+/*/
+
+# But not these files...
+!.gitignore
+
+# And not this folders
+!/sandbox/
+
+# nested file:
+wp-content/*
+!wp-content/themes
+wp-content/themes/*
+!wp-content/themes/soucasaux-theme-light.zip

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Salary calculator</title>
+<link href="https://fonts.googleapis.com/css?family=Zilla+Slab+Highlight:400,700" rel="stylesheet">
+<link href="currency.css" rel="stylesheet">
+<link rel="icon" type="image/x-icon" href="https://vignette.wikia.nocookie.net/las-aventuras-de-super-mario-bros-3/images/6/64/Favicon.ico/revision/latest?cb=20151119172510&path-prefix=es">
+</head>
+
+<body>
+	
+	<div class="console">
+		<h1>Currency</h1>
+		<h2>Select currency :</h2>
+		<div class="choosecurr">
+			<input type="radio" id="currEuro" name="radiosCurrency" value="EUR" checked>
+			<label for="currEuro"><span>€</span> <em>Euro</em></label>
+			<input type="radio" id="currDollar" name="radiosCurrency" value="USD">
+			<label for="currDollar"><span>$</span> <em>Dollar</em></label> 
+			<input type="radio" id="currPound" name="radiosCurrency" value="GBP">
+			<label for="currPound"><span>£</span> <em>Pound</em></label>
+		</div>
+		<h2>Gross salary :</h2>
+		<div class="choosecurr">
+			<input type="radio" id="timeYear" name="radiosTime" value="year" checked>
+			<label for="timeYear">Year</label>
+			<input type="radio" id="timeMonth" name="radiosTime" value="month">
+			<label for="timeMonth">Month</label>
+		</div>
+		<input type="text" id="amount">
+		<h2>Taxes :</h2>
+		<div class="choosecurr">
+			<input type="radio" id="pt" name="loc" value="" checked>
+			<label for="pt">Portugal</label>
+			<input type="radio" id="de" name="loc" value="">
+			<label for="de">Germany</label>
+		</div>
+		<div class="actions">
+			<button id="calc">Calculate</button>
+			<button id="reset">Reset</button>
+		</div>
+	</div>
+
+	<div class="result">
+		<h2>Gross salary</h2>
+		<h3>Per month (x 12)</h3>
+		<p class="money month12"></p>
+		<h3>Per month (x 14)</h3>
+		<p class="money month14"></p>
+		<h3>Per year</h3>
+		<p class="money year"></p>
+		<h2>Net ballpark estimate p.c.m.</h2>
+		<p class="money net12"></p>
+		<p class="info">No Lunch or subsidies considered</p>
+		<h3>Tax level :</h3>
+		<table class="taxes">
+			<tr class="country">
+				<td class="pt" colspan="7">Portugal</td>
+				<td class="de">Germany</td>
+			</tr>
+			<tr class="rate">
+				<td>14.5 %</td>
+				<td>23 %</td>
+				<td>28 %</td>
+				<td>35 %</td>
+				<td>37 %</td>
+				<td>45 %</td>
+				<td>48 %</td>
+				<td>42 %</td>
+			</tr>
+		</table>
+	</div>
+
+	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+	<script src="main.js"></script>
+	
+	
+	
+</body>
+</html>
