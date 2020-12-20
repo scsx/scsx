@@ -15,6 +15,7 @@
         <li><a href="/sandbox/currency/index.html">Currency calculator</a></li>
         <li><a href="/sandbox/polytopia/polytopia.html">Polytopia</a></li>
         <li><a href="/sandbox/spotify">Spotify</a></li>
+        <li><a href="/sandbox/remove-brackets/index.html">Wikipedia remove brackets</a></li>
     </ul>
 
       <style>
